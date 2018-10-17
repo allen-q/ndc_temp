@@ -80,3 +80,18 @@ Parameter Group 0
 17/10/2018 04:24:54 - salt_model_v42_deep_supervision_cv_run1 - INFO - Epoch 2/150
 17/10/2018 04:24:54 - salt_model_v42_deep_supervision_cv_run1 - INFO - --------------------
 17/10/2018 04:24:54 - salt_model_v42_deep_supervision_cv_run1 - INFO - Pushing logs to git.
+17/10/2018 04:29:26 - salt_model_v42_deep_supervision_cv_run1 - INFO - Train IOU: 0.5846, Acc: 0.8716, Loss: [0.4371, 0.2536, 0.6907] at epoch 2
+17/10/2018 04:29:55 - salt_model_v42_deep_supervision_cv_run1 - INFO - ['../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-1-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-2-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-3-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-4-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-5-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-6-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-7-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-8-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-9-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-10-Of-10']
+17/10/2018 04:29:55 - salt_model_v42_deep_supervision_cv_run1 - INFO - Best Val Mean IOU so far: 0.6252000000000001
+17/10/2018 04:29:55 - salt_model_v42_deep_supervision_cv_run1 - INFO - Val   IOU: 0.6252, Acc: 0.9067, Best Val IOU: 0.6252 at epoch 2
+17/10/2018 04:29:55 - salt_model_v42_deep_supervision_cv_run1 - INFO - LR: [9.88e-05]
+17/10/2018 04:29:55 - salt_model_v42_deep_supervision_cv_run1 - INFO - Epoch 3/150
+17/10/2018 04:29:55 - salt_model_v42_deep_supervision_cv_run1 - INFO - --------------------
+17/10/2018 04:34:01 - salt_model_v42_deep_supervision_cv_run1 - INFO - Train IOU: 0.6321, Acc: 0.8939, Loss: [0.3947, 0.2273, 0.622] at epoch 3
+17/10/2018 04:34:29 - salt_model_v42_deep_supervision_cv_run1 - INFO - ['../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-1-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-2-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-3-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-4-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-5-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-6-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-7-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-8-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-9-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-10-Of-10']
+17/10/2018 04:34:29 - salt_model_v42_deep_supervision_cv_run1 - INFO - Best Val Mean IOU so far: 0.6547999999999999
+17/10/2018 04:34:29 - salt_model_v42_deep_supervision_cv_run1 - INFO - Val   IOU: 0.6548, Acc: 0.9171, Best Val IOU: 0.6548 at epoch 3
+17/10/2018 04:34:29 - salt_model_v42_deep_supervision_cv_run1 - INFO - LR: [9.82e-05]
+17/10/2018 04:34:29 - salt_model_v42_deep_supervision_cv_run1 - INFO - Epoch 4/150
+17/10/2018 04:34:29 - salt_model_v42_deep_supervision_cv_run1 - INFO - --------------------
+17/10/2018 04:34:29 - salt_model_v42_deep_supervision_cv_run1 - INFO - Pushing logs to git.

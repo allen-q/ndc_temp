@@ -1,0 +1,97 @@
+17/10/2018 12:39:42 - ds_cv_run1 - INFO - X_train_ids.shape: (3495,)
+17/10/2018 12:39:42 - ds_cv_run1 - INFO - X_val_ids.shape: (505,)
+17/10/2018 12:39:42 - ds_cv_run1 - INFO - np.sum(X_train_ids): 6996480
+17/10/2018 12:39:42 - ds_cv_run1 - INFO - np.sum(X_val_ids): 1001520
+17/10/2018 12:41:02 - ds_cv_run1 - INFO - ds_cv_run1, based on salt_model_v41_deep_supervision. 8 folds CV. CV 1. Image loss set to 0.1
+17/10/2018 12:41:49 - ds_cv_run1 - INFO - ds_cv_run1, based on salt_model_v41_deep_supervision. 8 folds CV. CV 1. Image loss set to 0.2
+17/10/2018 12:42:30 - ds_cv_run1 - INFO - 
+p = Pipeline_Salt()
+p.flip_left_right(probability=0.5)
+p.rotate90(0.25)
+p.rotate270(0.25)
+p.random_brightness(probability=0.5, min_factor=0.8, max_factor=1.2)
+p.random_contrast(probability=0.5, min_factor=0.8, max_factor=1.2)
+p.rotate_random_align(probability=0.5)
+p.crop_random_align(probability=0.5, min_factor=0.6, max_factor=1.0, mask_diff_pct=0.2)
+
+17/10/2018 12:42:30 - ds_cv_run1 - INFO - 
+train_data_params = {'batch_size': 32,
+                     #'sampler': weighted_sampler,
+                     'shuffle': True,
+                     'drop_last': False}
+
+val_data_params = {'batch_size': 64,
+                   'shuffle': True,
+                   'drop_last': False}
+
+train_dataLoader = (
+    DataLoader(SaltDataset(X_train, y_train, depth_train,
+                           np.zeros_like(X_train_mean_img), out_size=128,  out_ch=1,
+                           transform=p.torch_transform()), **train_data_params)
+)
+
+val_dataLoader = (
+    DataLoader(SaltDataset(X_val, y_val, depth_val, 
+                           np.zeros_like(X_train_mean_img), out_size=128, out_ch=1), **val_data_params)
+)
+
+dataloaders = {'train': train_dataLoader, 'val':val_dataLoader}
+
+17/10/2018 12:42:30 - ds_cv_run1 - INFO - 
+saltnet = UResNet(pretrained=True)
+loss_lovasz_hinge = TripleLovaszLoss()
+loss_fn_bce = TripleBCELoss(1, 0.2, 0.5)
+
+optimizer = optim.Adam(saltnet.parameters(), lr=2e-4, weight_decay=0.0001)
+
+#scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=5, verbose=True, threshold=0.0001, min_lr=0.00001)
+scheduler = PolyLR(optimizer, [2e-4], lr_decay_iter=1, max_iter=150, power=0.9)
+model_save_name = model_file_suffix
+log.info(model_save_name)
+
+17/10/2018 12:42:30 - ds_cv_run1 - INFO - 
+train_params = {
+    'model_save_name': model_save_name,
+    'save_model_every': 10,
+    'save_log_every': 4,
+    'num_epochs': 150,
+    'log': log,
+    'mask_cutoff': 0.,
+    'model_save_iou_threshold': 0.82
+    }
+
+17/10/2018 12:42:30 - ds_cv_run1 - INFO - 
+train_model_ds(saltnet, dataloaders, (loss_fn_bce, loss_lovasz_hinge), (1, 0.3), optimizer, scheduler, train_params, all_data)
+
+17/10/2018 12:42:31 - ds_cv_run1 - INFO - ../salt_net/ds_cv_run1_2018_10_17_23_39_28.ckp
+17/10/2018 12:42:31 - ds_cv_run1 - INFO - Start Training...
+17/10/2018 12:42:31 - ds_cv_run1 - INFO - ({'train': <torch.utils.data.dataloader.DataLoader object at 0x7f2ba0c370f0>, 'val': <torch.utils.data.dataloader.DataLoader object at 0x7f2ba0c37470>}, (TripleBCELoss(), TripleLovaszLoss()), (1, 0.3), Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.0002
+    weight_decay: 0.0001
+), <salt_func_lib.PolyLR object at 0x7f2b602ca898>, {'model_save_name': '../salt_net/ds_cv_run1_2018_10_17_23_39_28.ckp', 'save_model_every': 10, 'save_log_every': 4, 'num_epochs': 150, 'log': <Logger ds_cv_run1 (DEBUG)>, 'mask_cutoff': 0.0, 'model_save_iou_threshold': 0.82})
+17/10/2018 12:42:33 - ds_cv_run1 - INFO - Epoch 1/150
+17/10/2018 12:42:33 - ds_cv_run1 - INFO - --------------------
+17/10/2018 12:47:00 - ds_cv_run1 - INFO - Train IOU: 0.5030, Acc: 0.8111, Loss: [0.8264, 0.2929, 1.1193] at epoch 1
+17/10/2018 12:47:12 - ds_cv_run1 - INFO - ['../salt_net/ds_cv_run1_2018_10_17_23_39_28.ckp-chunk-1-Of-10', '../salt_net/ds_cv_run1_2018_10_17_23_39_28.ckp-chunk-2-Of-10', '../salt_net/ds_cv_run1_2018_10_17_23_39_28.ckp-chunk-3-Of-10', '../salt_net/ds_cv_run1_2018_10_17_23_39_28.ckp-chunk-4-Of-10', '../salt_net/ds_cv_run1_2018_10_17_23_39_28.ckp-chunk-5-Of-10', '../salt_net/ds_cv_run1_2018_10_17_23_39_28.ckp-chunk-6-Of-10', '../salt_net/ds_cv_run1_2018_10_17_23_39_28.ckp-chunk-7-Of-10', '../salt_net/ds_cv_run1_2018_10_17_23_39_28.ckp-chunk-8-Of-10', '../salt_net/ds_cv_run1_2018_10_17_23_39_28.ckp-chunk-9-Of-10', '../salt_net/ds_cv_run1_2018_10_17_23_39_28.ckp-chunk-10-Of-10']
+17/10/2018 12:47:12 - ds_cv_run1 - INFO - Best Val Mean IOU so far: 0.6164356435643564
+17/10/2018 12:47:12 - ds_cv_run1 - INFO - Val   IOU: 0.6164, Acc: 0.8970, Best Val IOU: 0.6164 at epoch 1
+17/10/2018 12:47:12 - ds_cv_run1 - INFO - LR: [0.0001988]
+17/10/2018 12:47:12 - ds_cv_run1 - INFO - Epoch 2/150
+17/10/2018 12:47:12 - ds_cv_run1 - INFO - --------------------
+17/10/2018 12:51:39 - ds_cv_run1 - INFO - Train IOU: 0.5829, Acc: 0.8680, Loss: [0.7177, 0.2568, 0.9746] at epoch 2
+17/10/2018 12:51:48 - ds_cv_run1 - INFO - Val   IOU: 0.5917, Acc: 0.8972, Best Val IOU: 0.6164 at epoch 2
+17/10/2018 12:51:48 - ds_cv_run1 - INFO - LR: [0.0001976]
+17/10/2018 12:51:48 - ds_cv_run1 - INFO - Epoch 3/150
+17/10/2018 12:51:48 - ds_cv_run1 - INFO - --------------------
+17/10/2018 12:56:15 - ds_cv_run1 - INFO - Train IOU: 0.6248, Acc: 0.8851, Loss: [0.6755, 0.2328, 0.9083] at epoch 3
+17/10/2018 12:56:27 - ds_cv_run1 - INFO - ['../salt_net/ds_cv_run1_2018_10_17_23_39_28.ckp-chunk-1-Of-10', '../salt_net/ds_cv_run1_2018_10_17_23_39_28.ckp-chunk-2-Of-10', '../salt_net/ds_cv_run1_2018_10_17_23_39_28.ckp-chunk-3-Of-10', '../salt_net/ds_cv_run1_2018_10_17_23_39_28.ckp-chunk-4-Of-10', '../salt_net/ds_cv_run1_2018_10_17_23_39_28.ckp-chunk-5-Of-10', '../salt_net/ds_cv_run1_2018_10_17_23_39_28.ckp-chunk-6-Of-10', '../salt_net/ds_cv_run1_2018_10_17_23_39_28.ckp-chunk-7-Of-10', '../salt_net/ds_cv_run1_2018_10_17_23_39_28.ckp-chunk-8-Of-10', '../salt_net/ds_cv_run1_2018_10_17_23_39_28.ckp-chunk-9-Of-10', '../salt_net/ds_cv_run1_2018_10_17_23_39_28.ckp-chunk-10-Of-10']
+17/10/2018 12:56:27 - ds_cv_run1 - INFO - Best Val Mean IOU so far: 0.6601980198019801
+17/10/2018 12:56:27 - ds_cv_run1 - INFO - Val   IOU: 0.6602, Acc: 0.9027, Best Val IOU: 0.6602 at epoch 3
+17/10/2018 12:56:27 - ds_cv_run1 - INFO - LR: [0.0001964]
+17/10/2018 12:56:27 - ds_cv_run1 - INFO - Epoch 4/150
+17/10/2018 12:56:27 - ds_cv_run1 - INFO - --------------------
+17/10/2018 12:56:27 - ds_cv_run1 - INFO - Pushing logs to git.

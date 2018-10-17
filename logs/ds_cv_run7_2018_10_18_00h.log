@@ -542,3 +542,7 @@ Parameter Group 0
 17/10/2018 20:24:48 - ds_cv_run7 - INFO - Epoch 80/150
 17/10/2018 20:24:48 - ds_cv_run7 - INFO - --------------------
 17/10/2018 20:24:48 - ds_cv_run7 - INFO - Pushing logs to git.
+17/10/2018 20:32:34 - ds_cv_run7 - INFO - Train IOU: 0.8038, Acc: 0.9496, Loss: [0.5564, 0.1158, 0.6722] at epoch 80
+17/10/2018 20:32:43 - ds_cv_run7 - INFO - Val   IOU: 0.8143, Acc: 0.9550, Best Val IOU: 0.8254 at epoch 80
+17/10/2018 20:32:46 - ds_cv_run7 - INFO - ['../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-1-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-2-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-3-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-4-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-5-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-6-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-7-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-8-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-9-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-10-Of-10']
+17/10/2018 20:32:46 - ds_cv_run7 - INFO - Pushing model state to git.

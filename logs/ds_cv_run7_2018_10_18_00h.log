@@ -120,3 +120,31 @@ Parameter Group 0
 17/10/2018 14:28:28 - ds_cv_run7 - INFO - Epoch 8/150
 17/10/2018 14:28:28 - ds_cv_run7 - INFO - --------------------
 17/10/2018 14:28:28 - ds_cv_run7 - INFO - Pushing logs to git.
+17/10/2018 14:33:46 - ds_cv_run7 - INFO - Train IOU: 0.6715, Acc: 0.8985, Loss: [0.7749, 0.1985, 0.9734] at epoch 8
+17/10/2018 14:33:58 - ds_cv_run7 - INFO - ['../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-1-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-2-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-3-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-4-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-5-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-6-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-7-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-8-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-9-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-10-Of-10']
+17/10/2018 14:33:58 - ds_cv_run7 - INFO - Best Val Mean IOU so far: 0.7330645161290323
+17/10/2018 14:33:58 - ds_cv_run7 - INFO - Val   IOU: 0.7331, Acc: 0.9423, Best Val IOU: 0.7331 at epoch 8
+17/10/2018 14:33:58 - ds_cv_run7 - INFO - LR: [0.0001904]
+17/10/2018 14:33:58 - ds_cv_run7 - INFO - Epoch 9/150
+17/10/2018 14:33:58 - ds_cv_run7 - INFO - --------------------
+17/10/2018 14:38:27 - ds_cv_run7 - INFO - Train IOU: 0.6813, Acc: 0.9052, Loss: [0.7468, 0.1873, 0.9341] at epoch 9
+17/10/2018 14:38:36 - ds_cv_run7 - INFO - Val   IOU: 0.7147, Acc: 0.9243, Best Val IOU: 0.7331 at epoch 9
+17/10/2018 14:38:36 - ds_cv_run7 - INFO - LR: [0.0001892]
+17/10/2018 14:38:36 - ds_cv_run7 - INFO - Epoch 10/150
+17/10/2018 14:38:36 - ds_cv_run7 - INFO - --------------------
+17/10/2018 14:43:06 - ds_cv_run7 - INFO - Train IOU: 0.7057, Acc: 0.9150, Loss: [0.7337, 0.1795, 0.9131] at epoch 10
+17/10/2018 14:43:18 - ds_cv_run7 - INFO - ['../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-1-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-2-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-3-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-4-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-5-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-6-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-7-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-8-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-9-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-10-Of-10']
+17/10/2018 14:43:18 - ds_cv_run7 - INFO - Best Val Mean IOU so far: 0.7375000000000002
+17/10/2018 14:43:18 - ds_cv_run7 - INFO - Val   IOU: 0.7375, Acc: 0.9390, Best Val IOU: 0.7375 at epoch 10
+17/10/2018 14:43:18 - ds_cv_run7 - INFO - Skip pushing model to git as there's no improvement
+17/10/2018 14:43:18 - ds_cv_run7 - INFO - LR: [0.000188]
+17/10/2018 14:43:18 - ds_cv_run7 - INFO - Epoch 11/150
+17/10/2018 14:43:18 - ds_cv_run7 - INFO - --------------------
+17/10/2018 14:47:47 - ds_cv_run7 - INFO - Train IOU: 0.7123, Acc: 0.9155, Loss: [0.7135, 0.1769, 0.8904] at epoch 11
+17/10/2018 14:47:59 - ds_cv_run7 - INFO - ['../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-1-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-2-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-3-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-4-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-5-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-6-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-7-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-8-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-9-Of-10', '../salt_net/ds_cv_run7_2018_10_18_00_52_29.ckp-chunk-10-Of-10']
+17/10/2018 14:47:59 - ds_cv_run7 - INFO - Best Val Mean IOU so far: 0.7455645161290323
+17/10/2018 14:47:59 - ds_cv_run7 - INFO - Val   IOU: 0.7456, Acc: 0.9398, Best Val IOU: 0.7456 at epoch 11
+17/10/2018 14:47:59 - ds_cv_run7 - INFO - LR: [0.0001868]
+17/10/2018 14:47:59 - ds_cv_run7 - INFO - Epoch 12/150
+17/10/2018 14:47:59 - ds_cv_run7 - INFO - --------------------
+17/10/2018 14:47:59 - ds_cv_run7 - INFO - Pushing logs to git.

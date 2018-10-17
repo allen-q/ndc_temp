@@ -338,3 +338,28 @@ Parameter Group 0
 17/10/2018 17:09:42 - ds_cv_run5 - INFO - Epoch 44/150
 17/10/2018 17:09:42 - ds_cv_run5 - INFO - --------------------
 17/10/2018 17:09:42 - ds_cv_run5 - INFO - Pushing logs to git.
+17/10/2018 17:15:00 - ds_cv_run5 - INFO - Train IOU: 0.7686, Acc: 0.9382, Loss: [0.5997, 0.1385, 0.7382] at epoch 44
+17/10/2018 17:15:12 - ds_cv_run5 - INFO - ['../salt_net/ds_cv_run5_2018_10_18_00_42_04.ckp-chunk-1-Of-10', '../salt_net/ds_cv_run5_2018_10_18_00_42_04.ckp-chunk-2-Of-10', '../salt_net/ds_cv_run5_2018_10_18_00_42_04.ckp-chunk-3-Of-10', '../salt_net/ds_cv_run5_2018_10_18_00_42_04.ckp-chunk-4-Of-10', '../salt_net/ds_cv_run5_2018_10_18_00_42_04.ckp-chunk-5-Of-10', '../salt_net/ds_cv_run5_2018_10_18_00_42_04.ckp-chunk-6-Of-10', '../salt_net/ds_cv_run5_2018_10_18_00_42_04.ckp-chunk-7-Of-10', '../salt_net/ds_cv_run5_2018_10_18_00_42_04.ckp-chunk-8-Of-10', '../salt_net/ds_cv_run5_2018_10_18_00_42_04.ckp-chunk-9-Of-10', '../salt_net/ds_cv_run5_2018_10_18_00_42_04.ckp-chunk-10-Of-10']
+17/10/2018 17:15:12 - ds_cv_run5 - INFO - Best Val Mean IOU so far: 0.7764587525150904
+17/10/2018 17:15:12 - ds_cv_run5 - INFO - Val   IOU: 0.7765, Acc: 0.9418, Best Val IOU: 0.7765 at epoch 44
+17/10/2018 17:15:12 - ds_cv_run5 - INFO - LR: [0.0001463]
+17/10/2018 17:15:12 - ds_cv_run5 - INFO - Epoch 45/150
+17/10/2018 17:15:12 - ds_cv_run5 - INFO - --------------------
+17/10/2018 17:19:38 - ds_cv_run5 - INFO - Train IOU: 0.7753, Acc: 0.9406, Loss: [0.6044, 0.1356, 0.74] at epoch 45
+17/10/2018 17:19:47 - ds_cv_run5 - INFO - Val   IOU: 0.7706, Acc: 0.9390, Best Val IOU: 0.7765 at epoch 45
+17/10/2018 17:19:47 - ds_cv_run5 - INFO - LR: [0.0001451]
+17/10/2018 17:19:47 - ds_cv_run5 - INFO - Epoch 46/150
+17/10/2018 17:19:47 - ds_cv_run5 - INFO - --------------------
+17/10/2018 17:24:13 - ds_cv_run5 - INFO - Train IOU: 0.7725, Acc: 0.9406, Loss: [0.601, 0.1361, 0.7371] at epoch 46
+17/10/2018 17:24:25 - ds_cv_run5 - INFO - ['../salt_net/ds_cv_run5_2018_10_18_00_42_04.ckp-chunk-1-Of-10', '../salt_net/ds_cv_run5_2018_10_18_00_42_04.ckp-chunk-2-Of-10', '../salt_net/ds_cv_run5_2018_10_18_00_42_04.ckp-chunk-3-Of-10', '../salt_net/ds_cv_run5_2018_10_18_00_42_04.ckp-chunk-4-Of-10', '../salt_net/ds_cv_run5_2018_10_18_00_42_04.ckp-chunk-5-Of-10', '../salt_net/ds_cv_run5_2018_10_18_00_42_04.ckp-chunk-6-Of-10', '../salt_net/ds_cv_run5_2018_10_18_00_42_04.ckp-chunk-7-Of-10', '../salt_net/ds_cv_run5_2018_10_18_00_42_04.ckp-chunk-8-Of-10', '../salt_net/ds_cv_run5_2018_10_18_00_42_04.ckp-chunk-9-Of-10', '../salt_net/ds_cv_run5_2018_10_18_00_42_04.ckp-chunk-10-Of-10']
+17/10/2018 17:24:25 - ds_cv_run5 - INFO - Best Val Mean IOU so far: 0.7798792756539236
+17/10/2018 17:24:25 - ds_cv_run5 - INFO - Val   IOU: 0.7799, Acc: 0.9436, Best Val IOU: 0.7799 at epoch 46
+17/10/2018 17:24:25 - ds_cv_run5 - INFO - LR: [0.0001438]
+17/10/2018 17:24:25 - ds_cv_run5 - INFO - Epoch 47/150
+17/10/2018 17:24:25 - ds_cv_run5 - INFO - --------------------
+17/10/2018 17:28:51 - ds_cv_run5 - INFO - Train IOU: 0.7712, Acc: 0.9367, Loss: [0.6111, 0.1353, 0.7465] at epoch 47
+17/10/2018 17:28:59 - ds_cv_run5 - INFO - Val   IOU: 0.7577, Acc: 0.9181, Best Val IOU: 0.7799 at epoch 47
+17/10/2018 17:28:59 - ds_cv_run5 - INFO - LR: [0.0001426]
+17/10/2018 17:28:59 - ds_cv_run5 - INFO - Epoch 48/150
+17/10/2018 17:28:59 - ds_cv_run5 - INFO - --------------------
+17/10/2018 17:28:59 - ds_cv_run5 - INFO - Pushing logs to git.

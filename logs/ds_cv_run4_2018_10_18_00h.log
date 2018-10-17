@@ -692,3 +692,25 @@ Parameter Group 0
 17/10/2018 22:36:08 - ds_cv_run4 - INFO - Epoch 108/150
 17/10/2018 22:36:08 - ds_cv_run4 - INFO - --------------------
 17/10/2018 22:36:08 - ds_cv_run4 - INFO - Pushing logs to git.
+17/10/2018 22:42:33 - ds_cv_run4 - INFO - Train IOU: 0.8282, Acc: 0.9618, Loss: [0.4875, 0.1606, 0.648] at epoch 108
+17/10/2018 22:42:43 - ds_cv_run4 - INFO - Val   IOU: 0.8414, Acc: 0.9655, Best Val IOU: 0.8431 at epoch 108
+17/10/2018 22:42:43 - ds_cv_run4 - INFO - LR: [6.36e-05]
+17/10/2018 22:42:43 - ds_cv_run4 - INFO - Epoch 109/150
+17/10/2018 22:42:43 - ds_cv_run4 - INFO - --------------------
+17/10/2018 22:47:11 - ds_cv_run4 - INFO - Train IOU: 0.8302, Acc: 0.9614, Loss: [0.4847, 0.1534, 0.638] at epoch 109
+17/10/2018 22:47:20 - ds_cv_run4 - INFO - Val   IOU: 0.8330, Acc: 0.9632, Best Val IOU: 0.8431 at epoch 109
+17/10/2018 22:47:20 - ds_cv_run4 - INFO - LR: [6.22e-05]
+17/10/2018 22:47:20 - ds_cv_run4 - INFO - Epoch 110/150
+17/10/2018 22:47:20 - ds_cv_run4 - INFO - --------------------
+17/10/2018 22:51:48 - ds_cv_run4 - INFO - Train IOU: 0.8330, Acc: 0.9634, Loss: [0.4791, 0.1571, 0.6362] at epoch 110
+17/10/2018 22:51:57 - ds_cv_run4 - INFO - Val   IOU: 0.8358, Acc: 0.9681, Best Val IOU: 0.8431 at epoch 110
+17/10/2018 22:51:57 - ds_cv_run4 - INFO - Skip pushing model to git as there's no improvement
+17/10/2018 22:51:57 - ds_cv_run4 - INFO - LR: [6.09e-05]
+17/10/2018 22:51:57 - ds_cv_run4 - INFO - Epoch 111/150
+17/10/2018 22:51:57 - ds_cv_run4 - INFO - --------------------
+17/10/2018 22:56:25 - ds_cv_run4 - INFO - Train IOU: 0.8333, Acc: 0.9619, Loss: [0.4795, 0.1515, 0.631] at epoch 111
+17/10/2018 22:56:34 - ds_cv_run4 - INFO - Val   IOU: 0.8288, Acc: 0.9605, Best Val IOU: 0.8431 at epoch 111
+17/10/2018 22:56:34 - ds_cv_run4 - INFO - LR: [5.95e-05]
+17/10/2018 22:56:34 - ds_cv_run4 - INFO - Epoch 112/150
+17/10/2018 22:56:34 - ds_cv_run4 - INFO - --------------------
+17/10/2018 22:56:34 - ds_cv_run4 - INFO - Pushing logs to git.

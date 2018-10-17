@@ -1,0 +1,82 @@
+17/10/2018 04:17:47 - salt_model_v42_deep_supervision_cv_run1 - INFO - np.sum(X_train_ids): 5859769
+17/10/2018 04:17:47 - salt_model_v42_deep_supervision_cv_run1 - INFO - np.sum(X_val_ids): 2138231
+17/10/2018 04:17:56 - salt_model_v42_deep_supervision_cv_run1 - INFO - salt_model_v42_deep_supervision_cv_run1, based on salt_model_v41_deep_supervision. 4 folds CV. Increase image loss
+17/10/2018 04:20:13 - salt_model_v42_deep_supervision_cv_run1 - INFO - 
+p = Pipeline_Salt()
+p.flip_left_right(probability=0.5)
+p.rotate90(0.25)
+p.rotate270(0.25)
+p.random_brightness(probability=0.5, min_factor=0.8, max_factor=1.2)
+p.random_contrast(probability=0.5, min_factor=0.8, max_factor=1.2)
+p.rotate_random_align(probability=0.5)
+p.crop_random_align(probability=0.5, min_factor=0.6, max_factor=1.0, mask_diff_pct=0.2)
+
+17/10/2018 04:20:13 - salt_model_v42_deep_supervision_cv_run1 - INFO - 
+train_data_params = {'batch_size': 32,
+                     #'sampler': weighted_sampler,
+                     'shuffle': True,
+                     'drop_last': True}
+
+val_data_params = {'batch_size': 25,
+                   'shuffle': True,
+                   'drop_last': False}
+
+train_dataLoader = (
+    DataLoader(SaltDataset(X_train, y_train, depth_train,
+                           np.zeros_like(X_train_mean_img), out_size=128,  out_ch=1,
+                           transform=p.torch_transform()), **train_data_params)
+)
+
+val_dataLoader = (
+    DataLoader(SaltDataset(X_val, y_val, depth_val, 
+                           np.zeros_like(X_train_mean_img), out_size=128, out_ch=1), **val_data_params)
+)
+
+dataloaders = {'train': train_dataLoader, 'val':val_dataLoader}
+
+17/10/2018 04:20:13 - salt_model_v42_deep_supervision_cv_run1 - INFO - 
+saltnet = UResNet(pretrained=True)
+loss_lovasz_hinge = TripleLovaszLoss()
+loss_fn_bce = TripleBCELoss(1, 0.1, 0.1)
+
+optimizer = optim.Adam(saltnet.parameters(), lr=1e-4, weight_decay=0.0001)
+
+#scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(optimizer, mode='min', factor=0.5, patience=5, verbose=True, threshold=0.0001, min_lr=0.00001)
+scheduler = PolyLR(optimizer, [1e-4], lr_decay_iter=1, max_iter=150, power=0.9)
+model_save_name = model_file_suffix
+log.info(model_save_name)
+
+17/10/2018 04:20:13 - salt_model_v42_deep_supervision_cv_run1 - INFO - 
+train_params = {
+    'model_save_name': model_save_name,
+    'save_model_every': 20,
+    'save_log_every': 2,
+    'num_epochs': 150,
+    'log': log,
+    'mask_cutoff': 0.,
+    'model_save_iou_threshold': 0.82
+    }
+
+17/10/2018 04:20:13 - salt_model_v42_deep_supervision_cv_run1 - INFO - 
+train_model_ds(saltnet, dataloaders, (loss_fn_bce, loss_lovasz_hinge), (1, 0.3), optimizer, scheduler, train_params, all_data)
+
+17/10/2018 04:20:16 - salt_model_v42_deep_supervision_cv_run1 - INFO - ../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp
+17/10/2018 04:20:16 - salt_model_v42_deep_supervision_cv_run1 - INFO - Start Training...
+17/10/2018 04:20:16 - salt_model_v42_deep_supervision_cv_run1 - INFO - ({'train': <torch.utils.data.dataloader.DataLoader object at 0x7f0e09ced4e0>, 'val': <torch.utils.data.dataloader.DataLoader object at 0x7f0e09ceda20>}, (TripleBCELoss(), TripleLovaszLoss()), (1, 0.3), Adam (
+Parameter Group 0
+    amsgrad: False
+    betas: (0.9, 0.999)
+    eps: 1e-08
+    lr: 0.0001
+    weight_decay: 0.0001
+), <salt_func_lib.PolyLR object at 0x7f0e09a12208>, {'model_save_name': '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp', 'save_model_every': 20, 'save_log_every': 2, 'num_epochs': 150, 'log': <Logger salt_model_v42_deep_supervision_cv_run1 (DEBUG)>, 'mask_cutoff': 0.0, 'model_save_iou_threshold': 0.82})
+17/10/2018 04:20:19 - salt_model_v42_deep_supervision_cv_run1 - INFO - Epoch 1/150
+17/10/2018 04:20:19 - salt_model_v42_deep_supervision_cv_run1 - INFO - --------------------
+17/10/2018 04:24:25 - salt_model_v42_deep_supervision_cv_run1 - INFO - Train IOU: 0.4993, Acc: 0.8090, Loss: [0.5624, 0.287, 0.8494] at epoch 1
+17/10/2018 04:24:54 - salt_model_v42_deep_supervision_cv_run1 - INFO - ['../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-1-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-2-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-3-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-4-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-5-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-6-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-7-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-8-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-9-Of-10', '../salt_net/salt_model_v42_deep_supervision_cv_run1_2018_10_17_15_17_30.ckp-chunk-10-Of-10']
+17/10/2018 04:24:54 - salt_model_v42_deep_supervision_cv_run1 - INFO - Best Val Mean IOU so far: 0.5433
+17/10/2018 04:24:54 - salt_model_v42_deep_supervision_cv_run1 - INFO - Val   IOU: 0.5433, Acc: 0.8732, Best Val IOU: 0.5433 at epoch 1
+17/10/2018 04:24:54 - salt_model_v42_deep_supervision_cv_run1 - INFO - LR: [9.94e-05]
+17/10/2018 04:24:54 - salt_model_v42_deep_supervision_cv_run1 - INFO - Epoch 2/150
+17/10/2018 04:24:54 - salt_model_v42_deep_supervision_cv_run1 - INFO - --------------------
+17/10/2018 04:24:54 - salt_model_v42_deep_supervision_cv_run1 - INFO - Pushing logs to git.

@@ -423,3 +423,14 @@ Parameter Group 0
 17/10/2018 07:23:49 - salt_model_v42_deep_supervision_cv_run0 - INFO - Epoch 46/150
 17/10/2018 07:23:49 - salt_model_v42_deep_supervision_cv_run0 - INFO - --------------------
 17/10/2018 07:23:49 - salt_model_v42_deep_supervision_cv_run0 - INFO - Pushing logs to git.
+17/10/2018 07:29:09 - salt_model_v42_deep_supervision_cv_run0 - INFO - Train IOU: 0.7918, Acc: 0.9479, Loss: [0.2096, 0.122, 0.3316] at epoch 46
+17/10/2018 07:29:33 - salt_model_v42_deep_supervision_cv_run0 - INFO - Val   IOU: 0.7907, Acc: 0.9507, Best Val IOU: 0.7943 at epoch 46
+17/10/2018 07:29:33 - salt_model_v42_deep_supervision_cv_run0 - INFO - LR: [7.19e-05]
+17/10/2018 07:29:33 - salt_model_v42_deep_supervision_cv_run0 - INFO - Epoch 47/150
+17/10/2018 07:29:33 - salt_model_v42_deep_supervision_cv_run0 - INFO - --------------------
+17/10/2018 07:33:21 - salt_model_v42_deep_supervision_cv_run0 - INFO - Train IOU: 0.7861, Acc: 0.9449, Loss: [0.2166, 0.124, 0.3406] at epoch 47
+17/10/2018 07:33:45 - salt_model_v42_deep_supervision_cv_run0 - INFO - Val   IOU: 0.7794, Acc: 0.9465, Best Val IOU: 0.7943 at epoch 47
+17/10/2018 07:33:45 - salt_model_v42_deep_supervision_cv_run0 - INFO - LR: [7.13e-05]
+17/10/2018 07:33:45 - salt_model_v42_deep_supervision_cv_run0 - INFO - Epoch 48/150
+17/10/2018 07:33:45 - salt_model_v42_deep_supervision_cv_run0 - INFO - --------------------
+17/10/2018 07:33:45 - salt_model_v42_deep_supervision_cv_run0 - INFO - Pushing logs to git.

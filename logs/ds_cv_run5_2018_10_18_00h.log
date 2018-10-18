@@ -809,3 +809,9 @@ Parameter Group 0
 18/10/2018 00:06:04 - ds_cv_run5 - INFO - Epoch 128/150
 18/10/2018 00:06:04 - ds_cv_run5 - INFO - --------------------
 18/10/2018 00:06:04 - ds_cv_run5 - INFO - Pushing logs to git.
+18/10/2018 00:12:49 - ds_cv_run5 - INFO - Train IOU: 0.8424, Acc: 0.9680, Loss: [0.4875, 0.0911, 0.5786] at epoch 128
+18/10/2018 00:12:58 - ds_cv_run5 - INFO - Val   IOU: 0.8018, Acc: 0.9523, Best Val IOU: 0.8129 at epoch 128
+18/10/2018 00:12:58 - ds_cv_run5 - INFO - LR: [3.55e-05]
+18/10/2018 00:12:58 - ds_cv_run5 - INFO - Epoch 129/150
+18/10/2018 00:12:58 - ds_cv_run5 - INFO - --------------------
+18/10/2018 00:18:10 - ds_cv_run5 - INFO - Pushing model state to git.

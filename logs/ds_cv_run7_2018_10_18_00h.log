@@ -763,3 +763,9 @@ Parameter Group 0
 18/10/2018 00:24:43 - ds_cv_run7 - INFO - Epoch 120/150
 18/10/2018 00:24:43 - ds_cv_run7 - INFO - --------------------
 18/10/2018 00:24:43 - ds_cv_run7 - INFO - Pushing logs to git.
+18/10/2018 00:32:09 - ds_cv_run7 - INFO - Train IOU: 0.8348, Acc: 0.9658, Loss: [0.4891, 0.0942, 0.5833] at epoch 120
+18/10/2018 00:32:18 - ds_cv_run7 - INFO - Val   IOU: 0.8292, Acc: 0.9621, Best Val IOU: 0.8341 at epoch 120
+18/10/2018 00:32:18 - ds_cv_run7 - INFO - Skip pushing model to git as there's no improvement
+18/10/2018 00:32:18 - ds_cv_run7 - INFO - LR: [4.7e-05]
+18/10/2018 00:32:18 - ds_cv_run7 - INFO - Epoch 121/150
+18/10/2018 00:32:18 - ds_cv_run7 - INFO - --------------------

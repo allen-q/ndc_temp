@@ -837,3 +837,4 @@ Parameter Group 0
 17/10/2018 23:58:37 - ds_cv_run3 - INFO - Epoch 132/150
 17/10/2018 23:58:37 - ds_cv_run3 - INFO - --------------------
 17/10/2018 23:58:37 - ds_cv_run3 - INFO - Pushing logs to git.
+18/10/2018 00:09:45 - ds_cv_run3 - INFO - Pushing model state to git.
